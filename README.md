@@ -149,4 +149,4 @@ If you use Lombok and additional code style tools, ensure:
 # License
 Add your license information here.
 # Authors
-- Replace with your name or team.
+- Sleeper.Inc
