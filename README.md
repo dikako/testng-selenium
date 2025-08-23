@@ -1,4 +1,4 @@
-# Project Overview
+# Project Overview (Generate by AI)
 This repository is a Gradle-based Java 17 project using a standard src/main and src/test layout. It includes:
 - A simple application entry point under src/main/java.
 - A UI test suite under src/test with Page Object Model structure, environment-based configuration, and test data/resources.
