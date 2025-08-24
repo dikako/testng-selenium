@@ -50,7 +50,7 @@ jobs:
 
       # Step 2: Deploy the downloaded files to gh-pages
       - name: Deploy to gh-pages branch
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # The path is now relative to the downloaded artifact
