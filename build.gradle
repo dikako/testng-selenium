@@ -16,10 +16,17 @@ dependencies {
     testImplementation 'org.assertj:assertj-core:3.27.3'
     implementation 'org.apache.poi:poi:5.4.1'
     implementation 'com.aventstack:extentreports:5.1.2'
+    implementation 'org.apache.poi:poi-ooxml:5.4.1'
 }
 
 test {
     useTestNG() {
-        suiteXmlFiles = files("src/test/resources/suites/smoke.xml")
+        def suite = project.hasProperty('suite')
+                ? project.getProperty('suite')
+                : "regression.xml"
+
+        print "Run test suite: ${suite}"
+
+        suiteXmlFiles = files("src/test/resources/suites/${suite}")
     }
 }

@@ -1,11 +1,12 @@
 package dibimbing.pages;
 
+import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage {
-    private static final String URL = "https://www.saucedemo.com/v1/";
+    private static final String URL = "https://www.saucedemo.com";
 
     @FindBy(id = "user-name")
     private WebElement usernameInput;
@@ -15,6 +16,9 @@ public class LoginPage extends BasePage {
 
     @FindBy(id = "login-button")
     private WebElement loginButton;
+
+    @FindBy(css = "[data-test='error']")
+    private WebElement errorAlert;
 
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -28,5 +32,11 @@ public class LoginPage extends BasePage {
         usernameInput.sendKeys(username);
         passwordInput.sendKeys(password);
         loginButton.click();
+    }
+
+    public void assertLoginAlert() {
+        Assertions.assertThat(errorAlert.getText())
+                .as("Login alert should be displayed")
+                .isEqualTo("Epic sadface: Username and password do not match any user in this service");
     }
 }
