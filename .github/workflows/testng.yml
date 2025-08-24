@@ -35,22 +35,17 @@ jobs:
           name: test-results
           path: build/reports/tests/test/
 
-      - name: Upload Test Results yo Github Page
-        if: always()
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: build/reports/tests/test/
-
-  deploy-pages:
-    needs: build
+  build-and-deploy:
     runs-on: ubuntu-latest
-    permissions:
-      pages: write      # Allow publishing to GitHub Pages
-      id-token: write   # Allow authenticating with GitHub
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v3
+      - uses: actions/checkout@v3
+        with:
+          # Important: The gh-pages action needs the full history
+          fetch-depth: 0
+
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/reports/tests/test/ # Directory containing the content to be deployed
+          publish_branch: gh-pages
