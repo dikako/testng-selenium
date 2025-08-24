@@ -10,7 +10,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest {
-
+//    Example for static define data provider
 //    @DataProvider(name = "wrongLoginData")
 //    public Object[][] wrongLoginData() {
 //        return new Object[][]{
@@ -37,22 +37,20 @@ public class LoginTest extends BaseTest {
     public void testFailedLogin(String username, String password) {
         LoginPage loginPage = new LoginPage(DriverManager.getDriver());
 
-        loginPage.navigateToSauceDemo();
         loginPage.login(username, password);
         loginPage.assertLoginAlert();
     }
 
-    @Test(groups = {"regression"})
+    @Test(groups = {"regression", "test-log"})
     public void testLogin() {
         LoginPage loginPage = new LoginPage(DriverManager.getDriver());
-        loginPage.navigateToSauceDemo();
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login(config.getProperty("test.username"), config.getProperty("test.password"));
+        loginPage.assertLoginAlert();
     }
 
     @Test(groups = {"regression"})
     public void testLogin1() {
         LoginPage loginPage = new LoginPage(DriverManager.getDriver());
-        loginPage.navigateToSauceDemo();
         loginPage.login("standard_user", "secret_sauce");
     }
 
@@ -62,7 +60,6 @@ public class LoginTest extends BaseTest {
         LoginPage loginPage = new LoginPage(driver);
         ProductPage productPage = new ProductPage(driver);
 
-        loginPage.navigateToSauceDemo();
         loginPage.login("standard_user", "secret_sauce");
         productPage.assertProductPage();
     }
@@ -70,7 +67,6 @@ public class LoginTest extends BaseTest {
     @Test(groups = {"smoke", "p2"})
     public void testLogin3() {
         LoginPage loginPage = new LoginPage(DriverManager.getDriver());
-        loginPage.navigateToSauceDemo();
         loginPage.login("standard_user", "secret_sauce");
     }
 }

@@ -1,12 +1,14 @@
 package dibimbing.pages;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage {
-    private static final String URL = "https://www.saucedemo.com";
+    private static final Logger log = LogManager.getLogger(LoginPage.class);
 
     @FindBy(id = "user-name")
     private WebElement usernameInput;
@@ -24,11 +26,9 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-    public void navigateToSauceDemo() {
-        driver.get(URL);
-    }
-
     public void login(String username, String password) {
+        log.info("Logging in with username: {}", username);
+
         usernameInput.sendKeys(username);
         passwordInput.sendKeys(password);
         loginButton.click();

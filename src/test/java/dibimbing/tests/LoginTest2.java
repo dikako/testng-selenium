@@ -37,7 +37,6 @@ public class LoginTest2 extends BaseTest {
     public void testFailedLogin(String username, String password) {
         LoginPage loginPage = new LoginPage(DriverManager.getDriver());
 
-        loginPage.navigateToSauceDemo();
         loginPage.login(username, password);
         loginPage.assertLoginAlert();
     }
@@ -45,14 +44,12 @@ public class LoginTest2 extends BaseTest {
     @Test(groups = {"regression"})
     public void testLogin() {
         LoginPage loginPage = new LoginPage(DriverManager.getDriver());
-        loginPage.navigateToSauceDemo();
         loginPage.login("standard_user", "secret_sauce");
     }
 
     @Test(groups = {"regression"})
     public void testLogin1() {
         LoginPage loginPage = new LoginPage(DriverManager.getDriver());
-        loginPage.navigateToSauceDemo();
         loginPage.login("standard_user", "secret_sauce");
     }
 
@@ -62,7 +59,6 @@ public class LoginTest2 extends BaseTest {
         LoginPage loginPage = new LoginPage(driver);
         ProductPage productPage = new ProductPage(driver);
 
-        loginPage.navigateToSauceDemo();
         loginPage.login("standard_user", "secret_sauce");
         productPage.assertProductPage();
     }
@@ -70,7 +66,6 @@ public class LoginTest2 extends BaseTest {
     @Test(groups = {"smoke", "p2"})
     public void testLogin3() {
         LoginPage loginPage = new LoginPage(DriverManager.getDriver());
-        loginPage.navigateToSauceDemo();
         loginPage.login("standard_user", "secret_sauce");
     }
 }

@@ -1,0 +1,22 @@
+2025-08-24 13:41:14.545 [Test worker] INFO  dibimbing.pages.LoginPage - Logging in with username: standard_user
+2025-08-24 14:08:32.467 [Test worker] INFO  dibimbing.pages.LoginPage - Logging in with username: standard_user
+2025-08-24 14:08:38.895 [Test worker] INFO  dibimbing.core.TestListener - Test Error name: testLogin
+2025-08-24 14:37:33.788 [Test worker] INFO  dibimbing.pages.LoginPage - Logging in with username: data1
+2025-08-24 14:37:40.395 [Test worker] INFO  dibimbing.pages.LoginPage - Logging in with username: data2
+2025-08-24 14:37:41.550 [Test worker] INFO  dibimbing.pages.LoginPage - Logging in with username: standard_user
+2025-08-24 14:37:44.541 [Test worker] INFO  dibimbing.core.TestListener - Test Error name: testLogin
+2025-08-24 14:37:45.279 [Test worker] INFO  dibimbing.pages.LoginPage - Logging in with username: standard_user
+2025-08-24 14:37:46.088 [Test worker] INFO  dibimbing.pages.LoginPage - Logging in with username: standard_user
+2025-08-24 14:37:46.955 [Test worker] INFO  dibimbing.pages.LoginPage - Logging in with username: standard_user
+2025-08-24 15:13:18.360 [Test worker] INFO  dibimbing.core.ConfigReader - Loading properties from: /Users/fransiskusandikasetiawan/Documents/rnd/learn-testng2/src/test/resources/config/staging.properties
+2025-08-24 15:13:18.364 [Test worker] INFO  dibimbing.core.ConfigReader - Loaded properties: /Users/fransiskusandikasetiawan/Documents/rnd/learn-testng2/src/test/resources/config/staging.properties
+2025-08-24 15:13:18.366 [Test worker] INFO  dibimbing.core.BaseTest - Loaded config env: staging
+2025-08-24 15:13:53.313 [Test worker] INFO  dibimbing.core.ConfigReader - Loading properties from: /Users/fransiskusandikasetiawan/Documents/rnd/learn-testng2/src/test/resources/config/production.properties
+2025-08-24 15:13:53.318 [Test worker] INFO  dibimbing.core.ConfigReader - Loaded properties: /Users/fransiskusandikasetiawan/Documents/rnd/learn-testng2/src/test/resources/config/production.properties
+2025-08-24 15:13:53.321 [Test worker] INFO  dibimbing.core.BaseTest - Loaded config env: production
+2025-08-24 15:14:06.214 [Test worker] INFO  dibimbing.pages.LoginPage - Logging in with username: standard_user
+2025-08-24 15:14:12.405 [Test worker] INFO  dibimbing.core.TestListener - Test Error name: testLogin
+2025-08-24 15:15:08.718 [Test worker] INFO  dibimbing.core.ConfigReader - Loading properties from: /Users/fransiskusandikasetiawan/Documents/rnd/learn-testng2/src/test/resources/config/production.properties
+2025-08-24 15:15:08.721 [Test worker] INFO  dibimbing.core.ConfigReader - Loaded properties: /Users/fransiskusandikasetiawan/Documents/rnd/learn-testng2/src/test/resources/config/production.properties
+2025-08-24 15:15:08.723 [Test worker] INFO  dibimbing.core.BaseTest - Loaded config env: production
+2025-08-24 15:15:16.875 [Test worker] INFO  dibimbing.pages.LoginPage - Logging in with username: standard_user
