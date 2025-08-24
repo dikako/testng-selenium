@@ -41,18 +41,10 @@ jobs:
     permissions:
       contents: write
     steps:
-      # Step 1: Download the artifact from the 'build' job.
-      - name: Download Test Results
-        uses: actions/download-artifact@v4
-        with:
-          name: test-results
-          path: . # Download to the root of the runner's working directory
-
-      # Step 2: Deploy the downloaded files to gh-pages
-      - name: Deploy to gh-pages branch
+      - name: Deploy Test Report
+        if: always()
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # The path is now relative to the downloaded artifact
-          publish_dir: test-results/build/reports/tests/test/
+          publish_dir: build/reports/tests/test/
           publish_branch: gh-pages
