@@ -41,7 +41,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      # Step 1: Download the artifact from the 'build' job
+      # Step 1: Download the artifact from the 'build' job.
       - name: Download Test Results
         uses: actions/download-artifact@v4
         with:
