@@ -37,15 +37,16 @@ jobs:
 
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Add this line to grant write permission
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
-          # Important: The gh-pages action needs the full history
           fetch-depth: 0
 
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build/reports/tests/test/ # Directory containing the content to be deployed
+          publish_dir: ./build/reports/tests/test/
           publish_branch: gh-pages
